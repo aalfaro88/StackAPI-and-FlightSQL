@@ -1,4 +1,5 @@
-# FullStack Challenge using Flask, React, MYSQL and Docker
+# FullStack Challenge 
+Flask | React | MYSQL | Docker
 
 ## Overview
 
