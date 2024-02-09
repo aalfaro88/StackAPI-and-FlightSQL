@@ -1,4 +1,4 @@
-# FullStack MD Challenge
+# FullStack Challenge using Flask, React, MYSQL and Docker
 
 ## Overview
 
