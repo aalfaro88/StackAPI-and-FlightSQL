@@ -57,7 +57,6 @@ Once the containers are running, you can access the frontend application by navi
 To stop the running containers, you can use the following command:
 
 ```bash
-Copy code
 docker-compose down
 ```
 This command stops and removes the containers, networks, and volumes created by docker-compose up.
