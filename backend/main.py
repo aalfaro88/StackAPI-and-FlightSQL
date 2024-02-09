@@ -12,17 +12,24 @@ from app.routes.flight_data import data_bp
 from app.routes.stackexchange import stack_exchange
 
 # Load environment variables
-load_dotenv()
 
 
 def create_app():
     app = Flask(__name__)
     CORS(app)
 
+    load_dotenv()
+    
+    db_user = os.getenv('DB_USERNAME')  # Default to 'root' if not set
+    db_password = os.getenv('DB_PASSWORD')  # Default to 'ironhack' if not set
+    db_host = 'db'  
+    db_name = os.getenv('DB_NAME')  # Default to 'airplane_database' if not set
+    db_port = os.getenv('DB_PORT')  # Default MySQL port
+
     # Load configuration values
     app.config["CLIENT_ID"] = os.getenv("CLIENT_ID")
     app.config["KEY"] = os.getenv("KEY")
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
+    app.config["SQLALCHEMY_DATABASE_URI"] = f'mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # Initialize SQLAlchemy with the Flask app

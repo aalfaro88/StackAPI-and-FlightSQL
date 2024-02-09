@@ -26,7 +26,21 @@ Before you begin, ensure you have Docker installed on your system. If not, you c
     cd StackAPI-and-FlightSQL
 ```
 
-2. **Build the Docker Containers and Run**
+2. **Setting Up Environment Variables**
+
+Before running your application, you need to configure the database connection details. To do this, go to the .env file found backend folder and adjust the following lines with your own credentials:
+
+```bash
+# Database Configuration of MYSQL
+DB_USERNAME=root  # IMPORTANT: The username for your database; change if not using the default root user
+DB_PASSWORD=ironhack  # IMPORTANT: The password for your database user 
+DB_NAME=airplane_database  # The name of your database, no need to modify it.
+DB_PORT=3306  # The port your database server is listening on, typically 3306 for MySQL.
+```
+
+If you are unfamiliar with MySQL, do not have it installed, or need to set up your database credentials, consult the [MySQL Getting Started Documentation](https://dev.mysql.com/doc/mysql-getting-started/en/). This guide provides detailed instructions on installing MySQL, setting up your initial user, and creating a database.
+
+3. **Build the Docker Containers and Run**
 
 Use Docker Compose to build the application containers. This command builds the backend, frontend, and database containers according to the specifications in the docker-compose.yml file:
 
@@ -34,7 +48,7 @@ Use Docker Compose to build the application containers. This command builds the 
 git docker-compose up --build
 ```
 
-3 **Accessing the Application**
+4 **Accessing the Application**
 
 Once the containers are running, you can access the frontend application by navigating to http://localhost:3000 in your web browser. The backend API will be available at http://localhost:5001.
 
